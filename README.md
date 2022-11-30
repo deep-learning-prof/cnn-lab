@@ -40,10 +40,6 @@ folder, and then open the folder in VS-Code.
 
 Alternatively, you can use `git`. You can also copy and paste manually from the individual files. 
 
-### Get the lab code
-1. Go to the course Blackboard page and download the code for the lab 
-2. Create a new folder for your code called `cnn-lab`. You can choose any location for the folder. 
-3. Move the lab code to the `cnn-lab` folder. 
 
 ### Open the folder in VS-Code
 1. Open VS-code
@@ -109,7 +105,7 @@ Run the file to generate the plots
 
 #### Questions
 1. What is difference between validation and testing in this code? 
-2. What is the difference between training/testing loss and training/testing error?
+2. What is the difference between training/testing loss and training/testing accuracy?
 3. We are using the categorical cross-entropy (CCE) to measure the loss. 
    Would a larger CCE or smaller CCE result in a lower testing error?  
 4. What is the accuracy of the model?
