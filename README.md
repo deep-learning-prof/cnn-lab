@@ -77,7 +77,8 @@ Let's run the file and see the model that it creates.
 #### Questions
 1. Describe the architecture of the CNN. Provide details about the layers' size, type, and number. Also
    provide details about the activation functions used.
-   *Answer:* Based on the image `cnn_model.png`, we can observe that the CNN is formed by 6 layers. 
+   
+   *Answer:* We can observe that the CNN is formed by 6 layers. 
 
    **Layer 1**: This is the input layer. It doesn't apply any processing but it tells our model
    the shape of the inputs.  In this case, we have an input with shape None, 32, 32, 3. This
@@ -116,7 +117,8 @@ Let's run the file and see the model that it creates.
 2. Build a two-column table. The first row should have the lines of code that define the
    layers. The second column should have a screen shot of the corresponding layer in the
    architecture figure.  
-   *Answer 2*: 
+
+   *Answer*: 
    Layer 1 and Layer 2 are defined by 
    `model.add(tf.keras.layers.Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 3)))`
    Layer 3 is defined by `model.add(tf.keras.layers.MaxPooling2D((2, 2)))`
@@ -137,11 +139,14 @@ Lets run the file to train the model.
 
 #### Questions
 1. Which variables in the code are used as the training dataset by the function `fit`?
+
 *Answer*: `train_images, train_labels`
 
 2. Which variables in the code are used as the testing dataset by the function `fit`?
+
 *Answer*: `test_images, test_labels`
 3. Is accuracy a good performance measure? Why?
+
 *Answer*: Accuracy is a good performance measure as long as there is a roughly equal number of
 *training and testing sample for each category. The accuracy is calculates as correctly predicated sample
 divided by the total number of predictions. However, if one of the categories has many more
@@ -161,36 +166,44 @@ Run the file to generate the plots
 
 #### Questions
 1. What is difference between validation and testing in this code? 
+
 *Answer*. The difference between validation and testing is that the data that we are using for testing is
 not used for training, and vice versa. 
 
 2. What is the difference between training/testing loss and training/testing accuracy?
+
 *Answer*. The training loss and accuracy are calcualted when the model predicts the label for samples in
 the training dataset. The testing accuracy and loss are calculated when the model predicts labels in the
 testing data set.
 
 3. We are using the categorical cross-entropy (CCE) to measure the loss. 
    Would a larger CCE or smaller CCE result in a lower testing error?  
+
 *Answer*. Our testing error is equal to the CCE itself. So, lower CCE means lower testing error. 
 
 4. What is the accuracy of the model?
+
 *Answer*. After one epoch, the accuracy is about 0.55. You can see this value in the 
 `cnn-training-history.csv` file. 
 
 5. Has the training/testing accuracy converged in the accuracy plot?
+
 *Answer*. We cannot tell because we only had one epoch. 
 
 6. Has the training/testing loss converged  in the loss plot?
+
 *Answer*. We cannot tell because we only had one epoch. 
 
 
 7. Did the difference between the training and testing loss/accuracy decreased or     
    increased across epochs? If it increased and decreased in the plot specify in which
    epochs it increased/decreased? 
+
 *Answer*. We cannot tell because we only had one epoch. 
 
 8. Give the potential reasons that can explain the low accuracy of the model (anything 
    below 90% is considered low)
+
 *Answer*. Low accuracy can be due to low model capacity, over or under fitting, lack of enough
 data, too few epochs, incorrect learning rate, etc. 
 
@@ -203,6 +216,7 @@ parameters and the model itself.
 1. Based on your answers to Q.5 in the `analysis.py` file [section](#the-analysispy-file), 
    make changes to the training parameters to improve the testing accuracy and loss. 
 2. Describe your changes.
+
 *Answer*. There are multiple possible changes to improve the accuracy. The first change that I
 made was to increase the `epohcs` parameter in the `model.compile` function from 1 to 10. After,
 changing the epochs to a larger value, we can observe the accuracy and loss plots and give a better
@@ -237,6 +251,7 @@ We can continue extending the network with more layers to improve the testing ac
 3. Run the
 `training.py` and `analysis.py` files with your new parameters. 
 4. Did the testing performance improve? Explain why or why not. 
+
 *Answer* The model performance improved with the model that had an extra convolutional layer. The reason
 is that the capacity of the model, i.e., the total number of functions as well as their complexity from which it can choose to model
 the training data, is larger. This allows the model to find a more appropriate function. 
